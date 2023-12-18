@@ -7,7 +7,7 @@ import authenticationReducer from "./utils/authenticationReducer";
 export default function App() {
     const [authentication, authenticationDispatch] = useReducer(authenticationReducer, null, getAuthentication)
     useEffect(() => {
-        if (authentication != null) localStorage.setItem("authentication", JSON.stringify(authentication))
+        localStorage.setItem("authentication", JSON.stringify(authentication))
     }, [authentication])
 
     return (

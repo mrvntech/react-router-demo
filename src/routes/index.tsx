@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import UserHomePage from "../pages/UserHomePage";
 import HomePage from "../pages/HomePage";
-import Contact from "../components/pages/profile/Contact";
-import Information from "../components/pages/profile/Information";
+import Contact from "../components/pages/user-home/Contact";
+import Information from "../components/pages/user-home/Information";
 import LoginPage from "../pages/LoginPage";
 import AdminHomePage from "../pages/AdminHomePage";
 
@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
         element: <LoginPage />
     },
     {
-        path: 'profile',
+        path: '/user-home',
         element: <UserHomePage />,
         children: [
             {
@@ -30,4 +30,8 @@ export const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/admin-home',
+        element: <AdminHomePage />
+    }
 ])

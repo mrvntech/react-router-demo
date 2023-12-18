@@ -20,4 +20,4 @@ export function getAuthentication(): IAuthentication | null {
     return authentication != null ? JSON.parse(authentication) as IAuthentication : null
 }
 
-export const AuthenticationDispatchContext = createContext<Dispatch<{ type: string }> | null>(null)
+export const AuthenticationDispatchContext = createContext<Dispatch<{ type: string, role?: string }> | null>(null)

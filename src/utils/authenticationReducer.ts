@@ -1,6 +1,6 @@
 import { IAuthentication } from "./AuthenticationContext";
 
-export default function authenticationReducer(state: IAuthentication | null, action: { type: string }): IAuthentication | null {
+export default function authenticationReducer(state: IAuthentication | null, action: { type: string, role?: string }): IAuthentication | null {
     switch (action.type) {
         case 'login':
             return {
@@ -11,7 +11,7 @@ export default function authenticationReducer(state: IAuthentication | null, act
                 user: {
                     email: 'mrvntech@gmail.com',
                     username: 'mrvntech',
-                    role: '',
+                    role: action.role ?? '',
                     imageUrl: ''
                 }
             }
